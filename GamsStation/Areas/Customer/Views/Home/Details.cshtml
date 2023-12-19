@@ -1,0 +1,60 @@
+﻿@model Game
+
+<form method="post">
+    <input hidden asp-for="Id" />
+    <div class="card shadow border-0 mt-4 mb-4">
+        <div class="card-header bg-secondary bg-gradient text-light py-4">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h3 class="text-white text-uppercase">@Model.Title</h3>
+                    <p class="text-white-50 fw-semibold mb-0">@Model.Category.Name</p>
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="py-3">
+                <div class="row">
+                    <div class="col-6 col-md-2 offset-lg-1 pb-1">
+                        <a asp-action="Index" class="btn btn-outline-primary bg-gradient mb-5 fw-semibold btn-sm text-uppercase">
+                            <small>Back to home</small>
+                        </a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-lg-3 offset-lg-1 text-center mb-3">
+                        <img src="@Model.ImageURL" />
+                    </div>
+                    <div class="col-12 col-lg-6 offset-lg-1">
+                        <div class="ratio ratio-16x9">
+                            <iframe class="embed-responsive-item" src="@GetEmbedLink(Model.Trailer)" allowfullscreen></iframe>
+                        </div>
+                        <div class="row text-center ps-2 mt-4">
+                            <p class="text-warning fs-5"><i class="bi bi-cash-stack"></i> Price: @Model.Price JD</p>
+                            <div class="row pl-2 my-3">
+                                <p class="text-secondary lh-sm">@Html.Raw(Model.Description)</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 col-md-6 pb-1">
+                                <button type="submit"
+                                        class="btn btn-primary bg-gradient  w-100 py-2 text-uppercase fw-semibold">
+                                    Add to Cart
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+@{
+
+    string GetEmbedLink(string watchLink)
+    {
+        string videoId = watchLink.Split('/')[3].Split('?')[0];
+        return "https://www.youtube.com/embed/" + videoId;
+    }
+}
