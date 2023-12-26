@@ -13,7 +13,6 @@ namespace App.DataAccess.Repository.IRepository
         ICategoryRepository Category { get; }
         IGameRepository Game { get; }
         void Save();
-
         string UploadImage(IFormFile file);
     }
 }
