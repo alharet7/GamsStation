@@ -1,0 +1,15 @@
+﻿using App.Models;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace App.DataAccess.Repository.IRepository
+{
+    public interface IApplicationUserRepository : IRepository<ApplicationUser>
+    {
+        public void Update(ApplicationUser applicationUser);
+    }
+}

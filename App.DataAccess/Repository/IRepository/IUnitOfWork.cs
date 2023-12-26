@@ -8,11 +8,17 @@ using System.Threading.Tasks;
 
 namespace App.DataAccess.Repository.IRepository
 {
-    public interface IUnitOfWork
-    {
-        ICategoryRepository Category { get; }
-        IGameRepository Game { get; }
-        void Save();
-        string UploadImage(IFormFile file);
-    }
+	public interface IUnitOfWork
+	{
+		ICategoryRepository Category { get; }
+		IGameRepository Game { get; }
+		ICompanyRepository Company { get; }
+		IShoppingCartRepository ShoppingCart { get; }
+		IApplicationUserRepository ApplicationUser { get; }
+		IOrderDetailRepository OrderDetail { get; }
+		IOrderHeaderRepository OrderHeader { get; }
+
+		void Save();
+		string UploadImage(IFormFile file);
+	}
 }

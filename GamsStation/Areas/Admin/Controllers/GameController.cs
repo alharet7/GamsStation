@@ -11,6 +11,7 @@ using System.Collections.Generic;
 namespace GamsStation.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    //[Authorize(Roles = SD.Role_Admin)]
     public class GameController : Controller
     {
         private readonly IUnitOfWork _unitOfWork;
@@ -70,6 +71,12 @@ namespace GamsStation.Areas.Admin.Controllers
                     });
                 return View(gameVM);
             }
+        }
+
+        public IActionResult Details(int id)
+        {
+            Game game = _unitOfWork.Game.Get(u => u.Id == id, includeProperties: "Category");
+            return View(game);
         }
 
 

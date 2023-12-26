@@ -1,39 +1,55 @@
-﻿@model Game
+﻿@model ShoppingCart
+
 
 <form method="post">
-    <input hidden asp-for="Id" />
+    <input hidden asp-for="GameId" />
     <div class="card shadow border-0 mt-4 mb-4">
-        <div class="card-header bg-secondary bg-gradient text-light py-4">
+        <div class="card-header bg-secondary bg-gradient text-light py-1">
             <div class="row">
                 <div class="col-12 text-center">
-                    <h3 class="text-white text-uppercase">@Model.Title</h3>
-                    <p class="text-white-50 fw-semibold mb-0">@Model.Category.Name</p>
+                    <h3 class="text-white text-uppercase">@Model.Game.Title</h3>
+                    <p class="text-white-50 fw-semibold mb-0">@Model.Game.Category.Name</p>
                 </div>
             </div>
         </div>
         <div class="card-body">
-            <div class="py-3">
+            <div class="py-1">
                 <div class="row">
                     <div class="col-6 col-md-2 offset-lg-1 pb-1">
-                        <a asp-action="Index" class="btn btn-outline-primary bg-gradient mb-5 fw-semibold btn-sm text-uppercase">
+                        <a asp-action="Index" class="btn btn-outline-primary bg-gradient mb-2 fw-semibold btn-sm text-uppercase">
                             <small>Back to home</small>
                         </a>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-12 col-lg-3 offset-lg-1 text-center mb-3">
-                        <img src="@Model.ImageURL" />
+                        <img src="@Model.Game.ImageURL" />
                     </div>
                     <div class="col-12 col-lg-6 offset-lg-1">
                         <div class="ratio ratio-16x9">
-                            <iframe class="embed-responsive-item" src="@GetEmbedLink(Model.Trailer)" allowfullscreen></iframe>
+                            <iframe class="embed-responsive-item" src="@GetEmbedLink(Model.Game.Trailer)" allowfullscreen></iframe>
                         </div>
                         <div class="row text-center ps-2 mt-4">
-                            <p class="text-warning fs-5"><i class="bi bi-cash-stack"></i> Price: @Model.Price JD</p>
+                            <p class="text-warning fs-5"><i class="bi bi-cash-stack"></i> Price: @Model.Game.Price JD</p>
                             <div class="row pl-2 my-3">
-                                <p class="text-secondary lh-sm">@Html.Raw(Model.Description)</p>
+                                <p class="text-secondary lh-sm">@Html.Raw(Model.Game.Description)</p>
+                            </div>
+                            <div class="row pl-2 mb-3">
+                                <div class="col-md-4">
+                                    <div class="input-group mb-3">
+                                        <span class="input-group-text bg-primary text-white border-0 fw-semibold"
+                                        id="inputGroup-sizing-default">
+                                        Count
+                                    </span>
+                                        <input asp-for="Count" type="number" value="1" class="form-control "
+                                               aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" />
+                                    </div>
+
+                                </div>
+
                             </div>
                         </div>
+
                         <div class="row">
                             <div class="col-12 col-md-6 pb-1">
                                 <button type="submit"
