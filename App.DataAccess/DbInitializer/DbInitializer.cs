@@ -65,7 +65,7 @@ namespace App.DataAccess.DbInitializer
                     State = "Amman",
                     PostalCode = "11910",
                     City = "swaileh"
-                }, "Admin@123*").GetAwaiter().GetResult();
+                }, "Admin@123").GetAwaiter().GetResult();
 
 
                 ApplicationUser user = _db.ApplicationUsers.FirstOrDefault(u => u.Email == "admin@gmail.com");
