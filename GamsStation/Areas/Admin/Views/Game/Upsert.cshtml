@@ -11,59 +11,63 @@
     <div class="card-body p-4">
         <form method="post" class="row" enctype="multipart/form-data">
             <input asp-for="Game.Id" hidden />
-            <div class="border p-3">
-                @*<div asp-validation-summary="ModelOnly"></div>*@
-                <div class="form-group">
-                    <label asp-for="Game.Title" class="form-label mt-4">Title</label>
-                    <input asp-for="Game.Title" class="form-control shadow" placeholder="Enter Title">
-                    <span asp-validation-for="Game.Title" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="Game.Description" class="form-label mt-4">Description</label>
-                    <textarea asp-for="Game.Description" class="form-control shadow" placeholder="Enter Description"></textarea>
-                    <span asp-validation-for="Game.Description" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="Game.Price" class="form-label mt-4">Price</label>
-                    <input asp-for="Game.Price" class="form-control shadow" placeholder="Enter Price">
-                    <span asp-validation-for="Game.Price" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="Game.Platform" class="form-label mt-4">Platform</label>
-                    <input asp-for="Game.Platform" class="form-control shadow" placeholder="Enter Platform">
-                    <span asp-validation-for="Game.Platform" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="Game.Trailer" class="form-label mt-4">Trailer</label>
-                    <input asp-for="Game.Trailer" class="form-control shadow" placeholder="Enter Trailer URL">
-                    <span asp-validation-for="Game.Trailer" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="Game.ImageURL" class="form-label mt-4">Image</label>
-                    <input type="file" name="file" class="form-control" multiple />
-                </div>
-                <div class="form-group">
-                    <label asp-for="Game.CategoryId" class="form-label mt-4">Category</label>
-                    <select asp-for="@Model.Game.CategoryId" asp-items="@Model.CategoryList" class="form-select">
-                        <option disabled selected>--Select Category--</option>
-                    </select>
-                    <span asp-validation-for="Game.CategoryId" class="text-danger"></span>
-                </div>
-                <div class="row pt-2">
-                    <div class="col-6 col-md-3">
-                        @if (Model.Game.Id != 0)
-                        {
-                            <button type="submit" class="btn btn-primary form-control">Update</button>
-                        }
-                        else
-                        {
-                            <button type="submit" class="btn btn-primary form-control">Create</button>
-                        }
-                    </div>
-                    <div class="col-6 col-md-3">
-                        <a asp-controller="Game" asp-action="Index" class="btn btn-secondary border  form-control">
-                            Back to List
-                        </a>
+            <div class="row">
+                <div class="col-12">
+                    <div class="border p-3">
+                        @*<div asp-validation-summary="ModelOnly"></div>*@
+                        <div class="form-group">
+                            <label asp-for="Game.Title" class="form-label mt-4">Title</label>
+                            <input asp-for="Game.Title" class="form-control shadow" placeholder="Enter Title">
+                            <span asp-validation-for="Game.Title" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Game.Description" class="form-label mt-4">Description</label>
+                            <textarea asp-for="Game.Description" class="form-control shadow" placeholder="Enter Description"></textarea>
+                            <span asp-validation-for="Game.Description" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Game.Price" class="form-label mt-4">Price</label>
+                            <input asp-for="Game.Price" class="form-control shadow" placeholder="Enter Price">
+                            <span asp-validation-for="Game.Price" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Game.Platform" class="form-label mt-4">Platform</label>
+                            <input asp-for="Game.Platform" class="form-control shadow" placeholder="Enter Platform">
+                            <span asp-validation-for="Game.Platform" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Game.Trailer" class="form-label mt-4">Trailer</label>
+                            <input asp-for="Game.Trailer" class="form-control shadow" placeholder="Enter Trailer URL">
+                            <span asp-validation-for="Game.Trailer" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Game.ImageURL" class="form-label mt-4">Image</label>
+                            <input type="file" name="file" class="form-control" multiple />
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Game.CategoryId" class="form-label mt-4">Category</label>
+                            <select asp-for="@Model.Game.CategoryId" asp-items="@Model.CategoryList" class="form-select">
+                                <option disabled selected>--Select Category--</option>
+                            </select>
+                            <span asp-validation-for="Game.CategoryId" class="text-danger"></span>
+                        </div>
+                        <div class="row pt-2">
+                            <div class="col-6 col-md-3">
+                                @if (Model.Game.Id != 0)
+                                {
+                                    <button type="submit" class="btn btn-primary form-control">Update</button>
+                                }
+                                else
+                                {
+                                    <button type="submit" class="btn btn-primary form-control">Create</button>
+                                }
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <a asp-controller="Game" asp-action="Index" class="btn btn-secondary border  form-control">
+                                    Back to List
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -2138,7 +2138,7 @@ progress {
     .table > :not(caption) > * > * {
         padding: 0.5rem 0.5rem;
         color: var(--bs-table-color-state, var(--bs-table-color-type, var(--bs-table-color)));
-        background-color: var(--bs-table-bg);
+        background-color: gray;
         border-bottom-width: var(--bs-border-width);
         box-shadow: inset 0 0 0 9999px var(--bs-table-bg-state, var(--bs-table-bg-type, var(--bs-table-accent-bg)));
     }
@@ -3468,56 +3468,40 @@ textarea.form-control-lg {
 
 .btn-success {
     --bs-btn-color: #fff;
-    --bs-btn-bg: #41d7a7;
-    --bs-btn-border-color: #41d7a7;
+    --bs-btn-bg: #2e895a; /* Darker green color */
+    --bs-btn-border-color: #2e895a; /* Darker green border color */
     --bs-btn-hover-color: #fff;
-    --bs-btn-hover-bg: #37b78e;
-    --bs-btn-hover-border-color: #34ac86;
+    --bs-btn-hover-bg: #276e4f; /* Darker green hover color */
+    --bs-btn-hover-border-color: #246343;
     --bs-btn-focus-shadow-rgb: 94, 221, 180;
     --bs-btn-active-color: #fff;
-    --bs-btn-active-bg: #34ac86;
-    --bs-btn-active-border-color: #31a17d;
+    --bs-btn-active-bg: #246343; /* Darker green active color */
+    --bs-btn-active-border-color: #22583b;
     --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
     --bs-btn-disabled-color: #fff;
-    --bs-btn-disabled-bg: #41d7a7;
-    --bs-btn-disabled-border-color: #41d7a7;
+    --bs-btn-disabled-bg: #2e895a; /* Darker green disabled color */
+    --bs-btn-disabled-border-color: #2e895a; /* Darker green disabled border color */
 }
 
 .btn-info {
     --bs-btn-color: #fff;
-    --bs-btn-bg: #39cbfb;
-    --bs-btn-border-color: #39cbfb;
+    --bs-btn-bg: #278bbf; /* Slightly darker blue color */
+    --bs-btn-border-color: #278bbf; /* Slightly darker blue border color */
     --bs-btn-hover-color: #fff;
-    --bs-btn-hover-bg: #30add5;
-    --bs-btn-hover-border-color: #2ea2c9;
+    --bs-btn-hover-bg: #2578a8; /* Slightly darker blue hover color */
+    --bs-btn-hover-border-color: #236a98;
     --bs-btn-focus-shadow-rgb: 87, 211, 252;
     --bs-btn-active-color: #fff;
-    --bs-btn-active-bg: #2ea2c9;
-    --bs-btn-active-border-color: #2b98bc;
+    --bs-btn-active-bg: #236a98; /* Slightly darker blue active color */
+    --bs-btn-active-border-color: #215e8b;
     --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
     --bs-btn-disabled-color: #fff;
-    --bs-btn-disabled-bg: #39cbfb;
-    --bs-btn-disabled-border-color: #39cbfb;
+    --bs-btn-disabled-bg: #278bbf; /* Slightly darker blue disabled color */
+    --bs-btn-disabled-border-color: #278bbf; /* Slightly darker blue disabled border color */
 }
+
 
 .btn-warning {
-    --bs-btn-color: #fff;
-    --bs-btn-bg: #ffc107;
-    --bs-btn-border-color: #ffc107;
-    --bs-btn-hover-color: #fff;
-    --bs-btn-hover-bg: #d9a406;
-    --bs-btn-hover-border-color: #cc9a06;
-    --bs-btn-focus-shadow-rgb: 255, 202, 44;
-    --bs-btn-active-color: #fff;
-    --bs-btn-active-bg: #cc9a06;
-    --bs-btn-active-border-color: #bf9105;
-    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-    --bs-btn-disabled-color: #fff;
-    --bs-btn-disabled-bg: #ffc107;
-    --bs-btn-disabled-border-color: #ffc107;
-}
-
-.btn-danger {
     --bs-btn-color: #fff;
     --bs-btn-bg: #fd7e14;
     --bs-btn-border-color: #fd7e14;
@@ -3533,6 +3517,24 @@ textarea.form-control-lg {
     --bs-btn-disabled-bg: #fd7e14;
     --bs-btn-disabled-border-color: #fd7e14;
 }
+
+.btn-danger {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: #8b0000; /* Dark red color */
+    --bs-btn-border-color: #8b0000; /* Dark red border color */
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #6b0000; /* Dark red hover color */
+    --bs-btn-hover-border-color: #651000;
+    --bs-btn-focus-shadow-rgb: 139, 0, 0; /* Dark red focus shadow */
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #651000; /* Dark red active color */
+    --bs-btn-active-border-color: #5f0f0f;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #fff;
+    --bs-btn-disabled-bg: #8b0000; /* Dark red disabled color */
+    --bs-btn-disabled-border-color: #8b0000; /* Dark red disabled border color */
+}
+
 
 .btn-light {
     --bs-btn-color: #000;
@@ -4263,6 +4265,8 @@ textarea.form-control-lg {
     padding-left: 0;
     margin-bottom: 0;
     list-style: none;
+    box-shadow: 0 4px 4px rgba(255, 255, 255, 0.5) !important;
+
 }
 
 .nav-link {
